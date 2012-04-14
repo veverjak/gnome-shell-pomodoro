@@ -34,14 +34,6 @@ const Gettext = imports.gettext.domain('gnome-shell-pomodoro');
 const _ = Gettext.gettext;
 const ngettext = Gettext.ngettext;
 
-try {
-    const Keybinder = imports.gi.Keybinder;
-    Keybinder.init();
-} catch(e) {
-    global.logError('Pomodoro: '+ e.message);
-}
-
-
 // Time in seconds to fade timer label when pause starts or ends
 const FADE_ANIMATION_TIME = 0.25;
 const FADE_OPACITY = 150;
@@ -108,8 +100,8 @@ const Indicator = new Lang.Class({
         
         
         // Register keybindings to toggle
-        if (Keybinder)
-            Keybinder.bind(this._settings.get_string('toggle-key'), Lang.bind(this, this._onKeyPressed), null);
+        global.display.add_keybinding('org.gnome.shell.extensions.pomodoro', 'toggle-key', 0,
+                Lang.bind(this, this._onKeyPressed));
         
         this.connect('destroy', Lang.bind(this, this._onDestroy));
         

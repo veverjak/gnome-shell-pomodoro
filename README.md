@@ -8,7 +8,6 @@ You can read more on pomodoro technique [here](http://www.pomodorotechnique.com)
 
 # Dependencies
 - Gnome-shell 3.4 (Our [0.5 release](https://extensions.gnome.org/extension/53/pomodoro/version/115/) supported gnome-shell <= 3.2)
-- Optional [LibKeybinder3](https://github.com/engla/keybinder/tree/keybinder-3.0) for global key bindings
 
 # Installation
 ## Web based (recommended)
